@@ -1,0 +1,115 @@
+.home-container {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* 1. WELCOME HEADER */
+.home-header {
+  text-align: left;
+  margin-bottom: 0;
+  padding: 2rem;
+  border-radius: 24px;
+  background: linear-gradient(120deg, rgba(79, 70, 229, 0.12), rgba(248, 113, 113, 0.12));
+  border: 1px solid rgba(79, 70, 229, 0.08);
+  box-shadow: 0 20px 40px rgba(79, 70, 229, 0.15);
+}
+.home-header h2 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+.home-header p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+/* --- NEW 2-COLUMN GRID LAYOUT --- */
+.home-layout-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr);
+  gap: 2rem;
+}
+
+/* 2. PRIORITY ACTIONS (RIGHT SIDEBAR) */
+.home-sidebar-widgets h3 {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.home-priority-actions {
+  display: grid;
+  grid-template-columns: 1fr; /* This now stacks the cards vertically */
+  gap: 1.5rem;
+}
+
+.priority-card {
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 20px 45px rgba(15,23,42,0.08);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+}
+.priority-card.sos-card {
+  background-color: #fff0f0;
+  border: 1px solid #d9534f;
+}
+.priority-card.voice-card {
+  background-color: #f0f7ff;
+  border: 1px solid #4a90e2;
+}
+.priority-card.help-card {
+  background-color: #fff9e6;
+  border: 1px solid #f0ad4e;
+}
+
+/* 3. QUICK LINKS GRID (LEFT SIDE) */
+.quick-links-section h3 {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.home-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+}
+
+.home-card {
+  height: 220px;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  box-shadow: 0 20px 45px rgba(0,0,0,0.2);
+  transition: transform 0.2s;
+}
+.home-card:hover {
+  transform: translateY(-5px);
+}
+.home-card::before { /* Dark overlay */
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0));
+}
+.home-card-content {
+  position: relative;
+  z-index: 2;
+  padding: 1rem;
+}
+.home-card-content h4 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 1024px) {
+  .home-layout-grid {
+    grid-template-columns: 1fr;
+  }
+}
